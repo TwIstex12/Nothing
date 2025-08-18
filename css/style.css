@@ -198,3 +198,45 @@ p  { animation-delay: 0.4s; }
     transform: translateY(0);
   }
 }
+.Images1 img,
+.Images2 img {
+  width: 100%;       /* изображение занимает всю ширину блока */
+  max-width: 300px;  /* но не больше оригинала */
+  height: auto;      /* сохраняем пропорции */
+  border: 3px solid black;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.Images1,
+.Images2 {
+  display: flex;
+  flex-wrap: wrap;   /* перенос на новую строку при маленьком экране */
+  gap: 10px;         /* расстояние между картинками */
+  justify-content: center; /* центрируем блоки */
+}
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: #222;
+    border-radius: 15px;
+  }
+
+  h1, h2, h3, p {
+    font-size: 90%; /* немного уменьшаем текст */
+  }
+
+  .Images1 img,
+  .Images2 img {
+    max-width: 90%; /* картинки занимают почти всю ширину экрана */
+  }
+
+  .theme-btn,
+  .review-btn,
+  .feedback1 {
+    padding: 8px 16px; /* кнопки меньше */
+    font-size: 0.9rem;
+  }
+}
