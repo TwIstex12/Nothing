@@ -1,22 +1,200 @@
+#theme-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* начальный цвет */
+  pointer-events: none; /* чтобы не мешал кликам */
+  opacity: 0; /* изначально невидим */
+  z-index: 9999; /* поверх всего */
+  transition: opacity 0.5s ease;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 0 2px;
+  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  color: #222;
+  border: none;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+.nav-links a:hover {
+  background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
+  color: #000;
+  transform: translateY(-2px) scale(1.05);
+}
+/* Стили для сворачиваемого меню */
+.nav-toggle {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  background: linear-gradient(90deg, #888 0%, #ccc 100%);
+  color: #222;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s;
+}
+.nav-toggle:hover {
+  background: linear-gradient(90deg, #aaa 0%, #eee 100%);
+  color: #000;
+}
+
+
+nav {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  max-height: 200px;
+  transition: max-height 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s;
+  opacity: 1;
+}
+
+.nav-collapsed .nav-links {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    background: #222;
+    border-radius: 20px;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+}
 .feedback1 {
   display: inline-block;
   padding: 12px 32px;
-  background: linear-gradient(190deg, #4f8cff 0%, #38e6b0 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #4f8cff 0%, #38e6b0 100%);
+  color: #222;
   font-size: 1.1rem;
   font-weight: 600;
   border: none;
-  background: linear-gradient(190deg, #7c7b7b 0%, #ffffff 100%);
-  color: #f5f5f5;
+  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  color: #222;
   border-radius: 30px;
-  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   letter-spacing: 1px;
+}
+.feedback1:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
+  background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
 }
 
 .review-btn:hover {
   background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 8px 24px rgba(189, 189, 189, 0.18);
+  border-radius: 10px;
+  box-shadow: #bdbdbd;
+  border: #000;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  color: #222;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-left: 4px;
+  
+}
+.review-btn:active{
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
+  background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
+}
+.review-btn {
+  margin-left: 10px;
+  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  color:rgb(0, 0, 0);
+}
+.nav-toggle:active{
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
+  background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
+  color: #000;
+}
+.theme-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 0 2px;
+  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  color: #222;
+  border: none;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.theme-btn:hover {
+  background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
+  color: #000;
+  transform: translateY(-2px) scale(1.05);
+}
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .nav-links a,
+body.dark .theme-btn {
+  background: linear-gradient(90deg, #444 0%, #222 100%);
+  color: #fff;
+}
+
+body.dark .nav-links a:hover,
+body.dark .theme-btn:hover {
+  background: linear-gradient(90deg, #222 0%, #444 100%);
+}
+/* 1️⃣ Плавное увеличение и тень при наведении на изображения */
+.Images1 img,
+.Images2 img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Images1 img:hover,
+.Images2 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* 2️⃣ Плавное появление текста при загрузке */
+h1, h2, h3, p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+h1 { animation-delay: 0.1s; }
+h2 { animation-delay: 0.2s; }
+h3 { animation-delay: 0.3s; }
+p  { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

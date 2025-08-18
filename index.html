@@ -11,11 +11,16 @@
     </style>
   </head>
   <body>
-    <nav>
-  <a href="#nothing">Nothing Phone</a>
-  <a href="#cmf">CMF Phone</a>
-  <a href="#feedback">Отзывы</a>
-</nav>  
+    <div id="theme-overlay"></div>
+    <nav class="nav-collapsed" id="mainNav">
+      <button class="nav-toggle" id="navToggle">Меню</button>
+      <div class="nav-links">
+        <a href="#nothing">Nothing Phone</a>
+        <a href="#cmf">CMF Phone</a>
+        <a href="#feedback">Отзывы</a>
+      <button id="theme-toggle" class="theme-btn">Тема</button>
+      </div>
+    </nav>
     <h1 id="nothing">Nothing Phone</h1>
     <h3><p>
       Компания Nothing была основана в 2020 году бывшим топ-менеджером OnePlus
@@ -33,9 +38,12 @@
     <br>
     <h2>Вот примеры их телефонов</h2>
     <div class="Images1">
+      <a href="https://nothingphone.com.ua/">
   <img src="img/two.jpg" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 200px; object-fit: cover;">
   <img src="img/vertical.jpg" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 200px; object-fit: cover;">
   <img src="img/nothing-phone-2a-plus-india-2024-07-86c64acc37230c5af424ee0b2d9eb887.avif" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 200px; object-fit: cover;">
+  </a>
+  <h1>Нажмите для перехода на сайт Nothing ⬆⬆⬆</h1>
 </div>
     <h3><span>Причины купить именно их телефон:</span></h3>
     <h3><ol>
@@ -76,9 +84,13 @@
         <br>
         <h2> вот их примеры: </h2>
         <div class="Images2">
+          <a href="https://cmf.com.ua/"</a>
   <img src="img/Engineering_aesthetics_750x.webp" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 200px; object-fit: cover;">
   <img src="img/one.jpg" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 200px; object-fit: cover;">
   <img src="img/images.jpg" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 200px; object-fit: cover;">
+  </a>
+  <h1>Нажмите для перехода на сайт CMF ⬆⬆⬆</h1>
+        </div>
 </div>
       <h3><P> Причины для покупки телефона:</P></h3>
       <h3><ol>
@@ -108,5 +120,17 @@
     />
     <button type="button" class="review-btn">Отправить</button>
     <a href=""></a>
+    <script>
+      const nav = document.getElementById('mainNav');
+      const toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-collapsed');
+      });
+      const btn = document.getElementById('theme-toggle');
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    btn.textContent = document.body.classList.contains('dark') ? 'Светлая' : 'Тёмная';
+  });
+    </script>
   </body>
 </html>
