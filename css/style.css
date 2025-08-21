@@ -13,16 +13,16 @@
 
 .nav-links a {
   display: inline-block;
-  padding: 8px 18px;
+  padding: 5px 10px;
   margin: 0 2px;
-  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  background: rgb(182, 182, 182);
   color: #222;
   border: none;
-  border-radius: 18px;
-  font-size: 1rem;
+  border-radius: 14px;
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   transition: background 0.3s, color 0.3s, transform 0.2s;
   cursor: pointer;
 }
@@ -34,9 +34,9 @@
 /* Стили для сворачиваемого меню */
 .nav-toggle {
   position: fixed;
-  top: 24px;
+  top: 44px;
   right: 32px;
-  background: linear-gradient(90deg, #888 0%, #ccc 100%);
+  background: rgb(182, 182, 182);
   color: #222;
   border: none;
   border-radius: 30px;
@@ -44,7 +44,7 @@
   font-size: 1.1rem;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.3s, color 0.3s;
 }
 .nav-toggle:hover {
@@ -52,8 +52,10 @@
   color: #000;
 }
 
-
 nav {
+  border-radius: 30px;
+  border-bottom: 2px solid #444;
+  background-color: #636363;
   position: relative;
 }
 
@@ -62,7 +64,7 @@ nav {
   gap: 20px;
   overflow: hidden;
   max-height: 200px;
-  transition: max-height 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s;
   opacity: 1;
 }
 
@@ -85,12 +87,12 @@ nav {
 .feedback1 {
   display: inline-block;
   padding: 12px 32px;
-  background: linear-gradient(90deg, #4f8cff 0%, #38e6b0 100%);
+  background: #bdbdbd;
   color: #222;
   font-size: 1.1rem;
   font-weight: 600;
   border: none;
-  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  background: #bdbdbd;
   color: #222;
   border-radius: 30px;
   box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
@@ -101,7 +103,7 @@ nav {
 .feedback1:active {
   transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
-  background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
+  background: #bdbdbd;
 }
 
 .review-btn:hover {
@@ -116,9 +118,8 @@ nav {
   color: #222;
   transition: background 0.3s, color 0.3s, transform 0.2s;
   margin-left: 4px;
-  
 }
-.review-btn:active{
+.review-btn:active {
   transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
   background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
@@ -126,9 +127,9 @@ nav {
 .review-btn {
   margin-left: 10px;
   background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
-.nav-toggle:active{
+.nav-toggle:active {
   transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(189, 189, 189, 0.18);
   background: linear-gradient(90deg, #757575 0%, #bdbdbd 100%);
@@ -138,7 +139,7 @@ nav {
   display: inline-block;
   padding: 8px 18px;
   margin: 0 2px;
-  background: linear-gradient(90deg, #bdbdbd 0%, #757575 100%);
+  background: rgb(182, 182, 182);
   color: #222;
   border: none;
   border-radius: 18px;
@@ -156,8 +157,13 @@ nav {
 body.dark {
   background: #121212;
   color: #eee;
+  border-color: #444;
 }
-
+body.dark .Phone {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  border-color: #444;
+}
 body.dark .nav-links a,
 body.dark .theme-btn {
   background: linear-gradient(90deg, #444 0%, #222 100%);
@@ -177,20 +183,31 @@ body.dark .theme-btn:hover {
 .Images1 img:hover,
 .Images2 img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* 2️⃣ Плавное появление текста при загрузке */
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s forwards;
 }
 
-h1 { animation-delay: 0.1s; }
-h2 { animation-delay: 0.2s; }
-h3 { animation-delay: 0.3s; }
-p  { animation-delay: 0.4s; }
+h1 {
+  animation-delay: 0.1s;
+}
+h2 {
+  animation-delay: 0.2s;
+}
+h3 {
+  animation-delay: 0.3s;
+}
+p {
+  animation-delay: 0.4s;
+}
 
 @keyframes fadeInUp {
   to {
@@ -200,9 +217,9 @@ p  { animation-delay: 0.4s; }
 }
 .Images1 img,
 .Images2 img {
-  width: 100%;       /* изображение занимает всю ширину блока */
-  max-width: 300px;  /* но не больше оригинала */
-  height: auto;      /* сохраняем пропорции */
+  width: 100%; /* изображение занимает всю ширину блока */
+  max-width: 300px; /* но не больше оригинала */
+  height: auto; /* сохраняем пропорции */
   border: 3px solid black;
   border-radius: 10px;
   object-fit: cover;
@@ -211,8 +228,8 @@ p  { animation-delay: 0.4s; }
 .Images1,
 .Images2 {
   display: flex;
-  flex-wrap: wrap;   /* перенос на новую строку при маленьком экране */
-  gap: 10px;         /* расстояние между картинками */
+  flex-wrap: wrap; /* перенос на новую строку при маленьком экране */
+  gap: 10px; /* расстояние между картинками */
   justify-content: center; /* центрируем блоки */
 }
 @media (max-width: 600px) {
@@ -224,7 +241,10 @@ p  { animation-delay: 0.4s; }
     border-radius: 15px;
   }
 
-  h1, h2, h3, p {
+  h1,
+  h2,
+  h3,
+  p {
     font-size: 90%; /* немного уменьшаем текст */
   }
 
@@ -239,4 +259,33 @@ p  { animation-delay: 0.4s; }
     padding: 8px 16px; /* кнопки меньше */
     font-size: 0.9rem;
   }
+}
+.Phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #eaeaea;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.Phone2 {
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #2c2c2c;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.Phone1 h2,
+.Phone2 h2 {  
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+body{
+  padding-left: 32px;
+  padding-right: 32px;
 }
